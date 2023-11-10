@@ -1,7 +1,6 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import debounce from "lodash.debounce";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +8,7 @@ function App() {
   const [weather, setWeather] = useState({});
   const [searchCountry, setSearchCountry] = useState("Bangkok");
 
-  const apiKey = "6167bcda77ccc82af9d5edf239f010e2";
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   const fetchWeather = async () => {
     setIsLoading(true);
