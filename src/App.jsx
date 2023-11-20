@@ -23,9 +23,7 @@ function App() {
       const latitude = responseCoordinate.data[0].lat.toFixed(2);
       const longitude = responseCoordinate.data[0].lon.toFixed(2);
       console.log("coordinate", responseCoordinate);
-      const responseWeather = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
-      );
+      const responseWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
       console.log(responseWeather);
       setWeather(responseWeather.data);
     } catch (error) {
